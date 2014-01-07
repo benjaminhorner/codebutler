@@ -1,0 +1,33 @@
+@mixin border-bottom($color, $xStartPos){
+    border-bottom: 1px solid $color;
+    @media (min--moz-device-pixel-ratio: 1.5),
+       (-o-min-device-pixel-ratio: 3/2),
+       (-webkit-min-device-pixel-ratio: 1.5),
+       (min-device-pixel-ratio: 1.5),
+       (min-resolution: 144dpi),
+       (min-resolution: 1.5dppx) {
+            border-top: none;
+            border-bottom: none;
+            background-image: linear-gradient(0deg, $color, $color 50%, transparent 50%);
+            background-size: 100% 1px;
+            background-repeat: no-repeat;
+            background-position: $xStartPos bottom;
+        }
+}
+
+@mixin border-top($color, $xStartPos){
+    border-top: 1px solid $color;
+    @media (min--moz-device-pixel-ratio: 1.5),
+       (-o-min-device-pixel-ratio: 3/2),
+       (-webkit-min-device-pixel-ratio: 1.5),
+       (min-device-pixel-ratio: 1.5),
+       (min-resolution: 144dpi),
+       (min-resolution: 1.5dppx) {
+            border-top: none;
+            border-bottom: none;
+            background-image: linear-gradient(0deg, $color, transparent 50%, $color 50%);
+            background-size: 100% 1px;
+            background-repeat: no-repeat;
+            background-position: $xStartPos top;
+        }
+}

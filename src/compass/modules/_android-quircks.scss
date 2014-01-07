@@ -1,0 +1,63 @@
+/* ==== Add all your ANDROID specific styles heres  ======================================== */
+html.device-android{
+    height: auto;
+    min-height: 100%;
+    overflow: visible;
+    .UIViewHolder{
+        position: absolute;
+        height: auto;
+        min-height: 100%;
+
+        /* Header */
+        .UINavigationBar{
+            background-color: $UINavigationBGColor;
+        }
+        /* Main view */
+        .UIViewContainer{
+            position: absolute;
+            top: 65px;
+            bottom: 0;
+            width: 100%;
+            overflow: visible;
+
+            /* Simple View */
+            .UISimpleView{
+                min-height: 100%;
+            }
+
+            /* Table View */
+            .UITableView{
+                position: relative;
+                min-height: 200%;
+                width: 200%;
+                -webkit-transform: scale(0.5);
+                -webkit-transform-origin: 0 0;
+                .UITableCell{
+                    margin: 0 !important;
+                    padding: 30px 30px 30px 60px;
+                    font-size: 34px;
+                    line-height: 42px;
+                    border-bottom: 1px solid $UITableCellBorderColor;
+                }
+            }
+            &.hasArrows{
+                .UITableCell{
+                    padding-right: 60px;
+                    &:after{
+                        content:"\e60d";
+                        font-size: 26px;
+                        font-weight: bold;
+                        font-family: 'icons';
+                        position: absolute;
+                        right: 0;
+                        top: 12px;
+                        height: 100%;
+                        color: $UITableArrowsColor;
+                        padding: 30px;
+                        -webkit-box-sizing: border-box;
+                    }
+                }
+            }
+        }
+    }
+}

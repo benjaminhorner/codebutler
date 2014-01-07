@@ -1,0 +1,33 @@
+$lines-to-show-in-list: 2;
+@mixin pagePushAnimation(){
+    -webkit-transition-duration: $PagePushTransitionAnimationSpeed;
+    -webkit-transition-timing-function: $PagePushTransitionAnimationType;
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+}
+
+@mixin titlePushAnimation(){
+    -webkit-transition-duration: $TitlePushTransitionAnimationSpeed;
+    -webkit-transition-timing-function: $TitlePushTransitionAnimationType;
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+}
+
+@mixin navBtnsAnimation(){
+    -webkit-transition-duration: $TitlePushTransitionAnimationSpeed;
+    -webkit-transition-timing-function: $TitlePushTransitionAnimationType;
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+}
+
+@mixin checkboxAnimationIn(){
+    -webkit-transition-duration: 300ms;
+    -webkit-transition-timing-function: ease-out;
+    -webkit-backface-visibility: hidden;
+}
+
+@mixin checkboxAnimationOut(){
+    -webkit-transition-duration: 100ms;
+    -webkit-transition-timing-function: ease-in;
+    -webkit-backface-visibility: hidden;
+}

@@ -1,0 +1,66 @@
+.UIViewHolder{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    &.UIViewRefreshing{
+        top: 65px;
+    }
+    &.UIViewEndRefresh{
+        -webkit-transition: top 350ms;
+        top: 0;
+    }
+    .UIViewContainer{
+        position: absolute;
+        top: 65px;
+        bottom: 0;
+        width: 100%;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+
+        .UISimpleView{
+            background-color: $UIMainViewBGColor;
+            padding: 13px 14px;
+            min-height: 101%;
+        }
+    }
+    &.UIViewOpen{
+        .UIViewContainer{
+            -webkit-transform: translate3d(0, 0, 0);
+            -webkit-box-shadow: 0px 15px 15px 1px rgba(0,0,0,0.3);
+        }
+        z-index: 2;
+    }
+    &.UIClosedLeft{
+        .UIViewContainer{
+            -webkit-transform: translate3d(-33%, 0, 0);
+            .UIMainView{
+                //-webkit-transition-duration: 350ms;
+                //-webkit-transition-timing-function: cubic-bezier(0.055, 0.355, 0.220, 0.790);
+            }
+        }
+        z-index: 1;
+    }
+    &.UIClosedRight{
+        .UIViewContainer{
+            -webkit-transform: translate3d(100%, 0, 0);
+        }
+        z-index: 3;
+    }
+    &.UITransition{
+        border-left: 1px solid $UIViewBorderColor;
+        border-right: 1px solid $UIViewBorderColor;
+        width: -webkit-calc(100% + 2px);
+        .UIViewContainer{
+            @include pagePushAnimation();
+        }
+    }
+    .UITransitionStopper{
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+    }
+}

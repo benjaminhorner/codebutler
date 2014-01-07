@@ -1,0 +1,28 @@
+/* ==== COLORS ======================================== */
+$BaseColor              : #CC0000;
+$FontColor              : black;
+$HeadingsColor          : $FontColor;
+$UINavigationBGColor    : #f7f7f7;
+$UINavigationBorder     : #c8c7cc;
+$UIViewBorderColor      : #b5b5b5;
+$UIBodyBGColor          : white;//#efeff4;
+$UIMainViewBGColor      : white;
+$UIPageTitleColor       : black;
+$linkColor              : #007aff;
+$linkActive             : lighten($linkColor, 100);
+$UICheckboxRadioBGColor : #53d76a;
+$UISliderColor          : #b8b7b8;
+$UISliderBGColor        : #007aff;
+$UICellBGColor          : white;
+$UITableCellBorderColor : #c8c7cc;
+$UITableArrowsColor     : #c7c7cc;
+$UICellBGColorSelected  : #d9d9d9;
+
+
+/* ==== Animations ======================================== */
+$PagePushTransitionAnimationType: ease; //-webkit-transition-timing-function: cubic-bezier(0.055, 0.355, 0.220, 0.790); //-webkit-transition-timing-function: cubic-bezier(.17,.67,.16,1);
+$PagePushTransitionAnimationSpeed: 400ms;
+$TitlePushTransitionAnimationType: ease; //-webkit-transition-timing-function: cubic-bezier(0.055, 0.355, 0.220, 0.790); //-webkit-transition-timing-function: cubic-bezier(.17,.67,.16,1);
+$TitlePushTransitionAnimationSpeed: 400ms;
+$NavigationIconsTransitionAnimationType: ease; //-webkit-transition-timing-function: cubic-bezier(0.055, 0.355, 0.220, 0.790); //-webkit-transition-timing-function: cubic-bezier(.17,.67,.16,1);
+$NavigationIconsTransitionAnimationSpeed: 300ms;

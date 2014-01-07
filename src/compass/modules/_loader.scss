@@ -1,0 +1,85 @@
+.UIViewHolder{
+    .UISpinner{
+        position: fixed;
+        top: 95px;
+        left: 50%;
+        z-index: 0;
+        opacity: 1;
+        &.UISpinnerClosing{
+            -webkit-transform: scale(0.2) rotate(-90deg);
+            -webkit-transition: -webkit-transform 300ms;
+        }
+        &.UISpinnerOpening{
+            -webkit-transform: rotate(180deg);
+            opacity: 0;
+            -webkit-transition: -webkit-transform 1s ease, opacity 3000ms ease-out;
+        }
+        &:before{
+            content: "";
+            position: absolute;
+            left: -25px;
+            top: -25px;
+            width: spinner-sprite-width(spinner_00);
+            height: spinner-sprite-height(spinner_00);
+            background-size: auto 100%;
+            opacity: 1;
+            @include spinner-sprite(spinner_00);
+            -webkit-transform: scale(0.5);
+            -webkit-transform-origin: 50% 50%;
+        }
+
+        &.none:before{
+            content: "";
+            background-image: none;
+        }
+
+        &.first:before{
+            content: "";
+            @include spinner-sprite(spinner_01);
+        }
+        &.second:before{
+            content: "";
+            @include spinner-sprite(spinner_02);
+        }
+        &.third:before{
+            content: "";
+            @include spinner-sprite(spinner_03);
+        }
+        &.fourth:before{
+            content: "";
+            @include spinner-sprite(spinner_04);
+        }
+        &.fifth:before{
+            content: "";
+            @include spinner-sprite(spinner_05);
+        }
+        &.sixth:before{
+            content: "";
+            @include spinner-sprite(spinner_06);
+        }
+        &.seventh:before{
+            content: "";
+            @include spinner-sprite(spinner_07);
+        }
+        &.eigth:before{
+            content: "";
+            @include spinner-sprite(spinner_08);
+        }
+        &.ninth:before{
+            content: "";
+            @include spinner-sprite(spinner_09);
+        }
+        &.tenth:before{
+            content: "";
+            @include spinner-sprite(spinner_10);
+        }
+        &.eleventh:before{
+            content: "";
+            @include spinner-sprite(spinner_11);
+        }
+        &.twelfth:before{
+            content: "";
+            @include spinner-sprite(spinner_12);
+        }
+    }
+}

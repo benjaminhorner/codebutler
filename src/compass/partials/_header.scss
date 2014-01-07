@@ -1,0 +1,111 @@
+.UINavigationBarBg{
+    height: 65px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    -webkit-user-select: none;
+    z-index: 0;
+    background-color: $UINavigationBGColor;
+    @include border-bottom($UITableCellBorderColor, 0);
+}
+
+.UIViewHolder{
+    .UINavigationBar{
+        height: 65px;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        -webkit-user-select: none;
+        z-index: 2;
+        @include border-bottom($UITableCellBorderColor, 0);
+
+        .UINavigationTitle{
+            color: $UIPageTitleColor;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            left: 20%;
+            width: 100%;
+            z-index: 1;
+            font: 16px/85px -apple-system, HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+            font-weight: bold;
+            height: 100%;
+            text-overflow: ellipsis;
+            width: 60%;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        .UIPageNavigation{
+            font-size: 20px;
+            z-index: 2;
+            position: absolute;
+            top: 0;
+            height: 100%;
+            padding: 0 10px;
+            &:before{
+                height: 100%;
+                line-height: 85px;
+                color: $linkColor;
+            }
+            &:active{
+                &:before{
+                    color: $linkActive;
+                }
+            }
+            &.UIPageNavigationRight{
+                right: 0;
+            }
+            &.UIPageNavigationLeft{
+                left: 0;
+            }
+        }
+    }
+    &.UIViewOpen{
+        .UINavigationBar{
+            .UINavigationTitle{
+                -webkit-transform: translate3d(-1px, 0, 0);
+                -webkit-opacity: 1;
+            }
+            .UIPageNavigation{
+                -webkit-opacity: 1;
+            }
+        }
+    }
+    &.UIClosedLeft{
+        .UINavigationBar{
+            //background: rgba(247, 247, 247, 0);
+            .UINavigationTitle{
+                -webkit-transform: translate3d(-25%, 0, 0);
+                -webkit-opacity: 0;
+            }
+            .UIPageNavigation{
+                -webkit-opacity: 0;
+            }
+        }
+    }
+    &.UIClosedRight{
+        .UINavigationBar{
+            .UINavigationTitle{
+                //background: rgba(247, 247, 247, 0);
+                -webkit-transform: translate3d(100%, 0, 0);
+                -webkit-opacity: 0;
+            }
+            .UIPageNavigation{
+                -webkit-opacity: 0;
+            }
+        }
+    }
+    &.UITransition{
+        .UINavigationBar{
+            @include pagePushAnimation();
+            .UINavigationTitle{
+                @include titlePushAnimation();
+            }
+            .UIPageNavigation{
+                @include navBtnsAnimation();
+            }
+        }
+    }
+}

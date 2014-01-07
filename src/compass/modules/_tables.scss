@@ -1,0 +1,43 @@
+.UITableView{
+        position: relative;
+    background-color: $UIMainViewBGColor;
+    margin: 0;
+    min-width: 100%;
+    left: 0;
+    right: 0;
+    min-height: 101%;
+    padding: 0;
+    margin: 0;
+
+    .UITableCell{
+        margin: 0;
+        padding: 15px 15px 15px 30px;
+        background-color: $UICellBGColor;
+        @include border-bottom($UITableCellBorderColor, 30px);
+        position: relative;
+        &.selected{
+            background-color: $UICellBGColorSelected;
+        }
+        /*&:last-child{
+            background-image: none;
+        }*/
+    }
+    &.hasArrows{
+        .UITableCell{
+            padding-right: 30px;
+            &:after{
+                content:"\e60d";
+                font-size: 13px;
+                font-weight: bold;
+                font-family: 'icons';
+                position: absolute;
+                right: 0;
+                top: 0;
+                height: 100%;
+                color: $UITableArrowsColor;
+                padding: 15px;
+                -webkit-box-sizing: border-box;
+            }
+        }
+    }
+}
